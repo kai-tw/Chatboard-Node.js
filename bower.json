@@ -1,0 +1,23 @@
+{
+  "name": "chat-room",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kai"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "bootstrap": "^5.3.2",
+    "popper.js": "^2.11.8",
+    "crypto-js": "^4.1.1"
+  }
+}

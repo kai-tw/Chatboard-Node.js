@@ -1,0 +1,306 @@
+::-webkit-scrollbar-track {
+  background-color: #ddddda;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4a707a;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  font: 16px/1.7 "Titillium Web", "Noto Sans TC", sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: #4a707a;
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: #7697a0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.wrapper {
+  position: relative;
+  width: 100;
+  height: 100%;
+  height: fill-available;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  height: 100%;
+  overflow: hidden auto;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+#app.single-page {
+  max-width: 500px;
+}
+
+#result-box {
+  display: none;
+}
+#result-box.show {
+  display: block;
+}
+
+#headline {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.button {
+  padding: 0.5em 1em;
+  border: 2px solid #4a707a;
+  border-radius: 2em;
+  background: #fff;
+  color: #4a707a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.button:hover {
+  background-color: #4a707a;
+  color: #ddddda;
+  text-decoration: none;
+}
+.button.large {
+  padding: 1em 2em;
+}
+.button.siginificant {
+  background: #4a707a;
+  color: #ddddda;
+  text-decoration: none;
+}
+.button.siginificant:hover {
+  background: #fff;
+  color: #4a707a;
+}
+.button.icon-style {
+  padding: 1em;
+}
+
+.home-banner img {
+  width: 61.8%;
+}
+
+.site-form {
+  margin: 0 auto;
+  width: 61.8%;
+  text-align: left;
+}
+
+.form-control:focus {
+  border-color: #4a707a;
+  box-shadow: 0 0 0 0.2rem #c2c8c5;
+}
+
+.roomlist-container {
+  position: relative;
+  border-right: 2px solid #4a707a;
+  width: 300px;
+  background: #fff;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .roomlist-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+.roomlist-container .no-rooms:not(:last-child) {
+  display: none;
+}
+.roomlist-container .roomlist-item {
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.roomlist-container .roomlist-item:hover {
+  background-color: #ddddda;
+}
+.roomlist-container .roomlist-item.active {
+  border-color: #4a707a;
+  background-color: #4a707a;
+}
+.roomlist-container .roomlist-item .room-name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#add-room {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+.chat-room {
+  transition: all 0.2s ease;
+  background: url("../image/chat-background.jpg") center/cover no-repeat;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .chat-room {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(300px);
+    overflow: hidden;
+    z-index: 0;
+  }
+}
+.chat-room .room-container {
+  margin: auto;
+  width: 400px;
+  height: 100%;
+  overflow: auto;
+}
+@media screen and (max-width: 400px) {
+  .chat-room .room-container {
+    width: 100%;
+  }
+}
+.chat-room .message {
+  margin: 1em;
+  cursor: default;
+}
+.chat-room .message .message-name {
+  margin: 0;
+  padding: 0 1em;
+}
+.chat-room .message .message-content {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  background: #ddddda;
+}
+.chat-room .message.message-self {
+  margin-left: auto;
+  max-width: 61.8%;
+  text-align: right;
+}
+.chat-room .message.message-self .message-content:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #ddddda;
+  border-bottom: 0.5em solid transparent;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+}
+.chat-room .message.message-others {
+  margin-right: auto;
+  max-width: 61.8%;
+  text-align: left;
+}
+.chat-room .message.message-others .message-content:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #ddddda;
+  border-bottom: 0.5em solid transparent;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+}
+.chat-room .message.message-system .message-name {
+  display: none;
+}
+.chat-room .message.message-system .message-content {
+  background: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-hide .roomlist-container {
+    transform: translateX(-300px);
+  }
+  .sidebar-hide .chat-room {
+    transform: translateX(0);
+  }
+}
+.message-bar {
+  padding: 2rem 1rem;
+}
+
+#sidebar-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 7rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-left: none;
+  border-radius: 0 1rem 1rem 0;
+}
+@media screen and (max-width: 768px) {
+  #sidebar-menu {
+    display: block;
+  }
+}
+
+#input-bar {
+  flex: 1;
+  outline: none;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 2em;
+  min-width: 0;
+  box-shadow: 0 0 18px -4px #c2c8c5;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+#input-bar:focus, #input-bar:hover {
+  box-shadow: 0 0 18px 0 #94b0b7;
+}
+
+#send-message {
+  margin: 0 0.5rem;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+}

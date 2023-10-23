@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatboard</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Titillium+Web&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <main id="app" class="app-ui">
+            <div class="roomlist-container">
+                <h1 id="headline">
+                    Chats
+                </h1>
+                <div class="list-group list-group-flush" id="content"></div>
+                <button class="button siginificant icon-style material-symbols-outlined" id="add-room"
+                    data-bs-toggle="modal" data-bs-target="#add-room-dialog">edit</button>
+            </div>
+            <div class="chat-room flex-fill d-flex flex-column">
+                <div class="room-container flex-fill">
+                    <div id="room-content"></div>
+                </div>
+                <div class="message-bar d-flex flex-row">
+                    <button class="button material-symbols-outlined" id="sidebar-menu">menu</button>
+                    <input id="input-bar" type="text" placeholder="Message...">
+                    <button class="button siginificant material-symbols-outlined" id="send-message">send</button>
+                </div>
+            </div>
+        </main>
+        <div class="modal fade" id="add-room-dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add room</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="result-box"></div>
+                        <label for="room-name">Room name</label>
+                        <input type="text" class="form-control" placeholder="name" id="room-name">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="button siginificant" id="add-room-send">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="notification">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Notification</h5>
+                    </div>
+                    <p id="noti-content"></p>
+                    <div class="modal-footer">
+                        <button type="button" class="button m-3" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+    <script src="bower_components/socket.io/client-dist/socket.io.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
